@@ -1,0 +1,14 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+#codeInput{
+    height:90vh;
+    width:90vw;
+    vertical-align:top;
+    padding-top: 5px;
+}

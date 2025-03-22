@@ -7,9 +7,16 @@
 }
 
 #codeInput{
+<<<<<<< HEAD
     height:80vh;
     width:60vw;
     vertical-align:top;
     padding-top: 5px;
     padding-left: 5px;
+=======
+    height:90vh;
+    width:90vw;
+    vertical-align:top;
+    padding-top: 5px;
+>>>>>>> main
 }

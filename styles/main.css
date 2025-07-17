@@ -1,0 +1,218 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    margin-top: 0px;
+}
+
+.container-fluid {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+#pageContainer {
+    background-color: var(--vscode-bg);
+    display: flex;
+    flex-direction: row;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --vscode-bg: #1e1e1e;
+    --vscode-darker-bg: #252526;
+    --vscode-darkest: #181818;
+    --vscode-sidebar: #333333;
+    --vscode-text: #d4d4d4;
+    --vscode-highlight: #2c2c2c;
+    --vscode-blue: #007acc;
+    --vscode-line-number: #858585;
+    --vscode-border: #474747;
+
+}
+
+html, body {
+    background-color: var(--vscode-bg);
+    color: var(--vscode-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2em;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+}
+
+h1 {
+    color: #d4d4d4;
+    margin-top: 10px;
+}
+
+label {
+    color: #d4d4d4;
+}
+
+hr {
+    border-color: #474747;
+    margin: 20px 0;
+}
+
+.vscode-theme {
+    background-color: var(--vscode-bg) !important;
+    color: var(--vscode-text) !important;
+}
+
+.side-bar {
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    z-index: 200;
+    border: 1px solid #2b2b2b;
+
+}
+
+.side-bar-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0; 
+    left: 300px; 
+    width: calc(100% - 300px); 
+    height: 50px;
+    z-index: 100; 
+    display: flex;
+    flex-direction: column;
+    background-color: var(--vscode-bg); 
+    
+}
+
+.top-bar-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 0;
+    margin: 0;
+    background-color: var(--vscode-bg);
+    resize: none;
+}
+
+#frameOutput{
+    flex: 1;
+    width: 100%;
+    display: block;
+    margin-top: 0;
+    resize: vertical;
+    border: 1px solid #2b2b2b;
+}
+
+#codeInput, #highlightArea {
+    flex: 0 1 auto; /* flex-grow, makes it fill up space along it's flex direction */
+    height: 50vh;
+    min-height: 30vh;
+    max-height: 70vh;
+    width: 100%;
+    max-width: calc(100vw - 300px);
+    background-color:var(--vscode-bg);
+    color: white;
+    font-size: 18px;
+    border: none;
+    align-items: flex-start;
+    display: block;
+    padding-left: 15px;
+    margin-top: 1vh;
+    resize: vertical; 
+}
+
+#backButton{
+    background-color: var(--vscode-darker-bg);
+    border-color: var(--vscode-border);
+    color: white;
+    position: fixed;
+    right: 10vh;
+    top: 0.7vh;
+    z-index: 300;
+    font-size: 15px;
+    padding: 2px 6px;
+}
+
+#goButton {
+    background-color: var(--vscode-darker-bg);
+    border-color: var(--vscode-border);
+    position: fixed;
+    right: 10vh;
+    top: 0.7vh;
+    z-index: 300;
+    font-size: 15px;
+    padding: 2px 6px;
+}
+
+#infoButton{
+    background-color: var(--vscode-darker-bg);
+    border-color: var(--vscode-border);   
+    position: fixed;
+    right: 1vh;
+    top: 0.7vh;
+    z-index: 300;
+    font-size: 15px;
+    padding: 2px 6px;
+}
+
+
+/* Remove button borders */
+#infoButton:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+#goButton:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+#backButton:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+
+#infoPopup{
+    display:none; 
+    position:fixed; 
+    text-align: center;
+    font-family: 'arial narrow bold', sans-serif;
+    font-size: 20px;
+    z-index: 300;
+    top:50%; 
+    left:50%; 
+    transform:translate(-50%, -50%); 
+    padding:25px; 
+    background-color: var(--vscode-darker-bg); 
+    border:5px solid var(--vscode-highlight); 
+    width: 70vw;
+}

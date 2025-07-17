@@ -1,0 +1,108 @@
+/* Styling for the body and text */
+body {   
+   font-family: Arial, sans-serif;
+   text-align: center;
+}
+
+
+/* Container for the bars */
+#arrayContainer {
+   margin-top: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: flex-end; /* Ensure bars are aligned at the bottom */
+   flex-wrap: wrap;
+   width: 80%;
+   margin: 0 auto;
+   position: relative;
+}
+
+
+/* Styling for each bar */
+.bar {
+   display: inline-block;
+   position: relative;
+   width: 30px; /* Fixed width for bars */
+   margin: 2px;
+   background-color: red; /* Default bar color is red */
+   transition: height 0.3s ease, background-color 0.3s ease;
+}
+
+
+/* Text in the bars */
+.bar-value {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   top: 0;
+   margin: auto;
+   text-align: center;
+   color: black; /* Numbers will be black */
+   font-weight: bold;
+   line-height: 1.5; /* Adjust line height to center the number vertically */
+}
+
+
+/* Highlight bars that are being swapped */
+.highlight {
+   background-color: blue;
+}
+
+
+/* Completed bars will turn green */
+.completed {
+   background-color: green;
+}
+
+
+/* Styling for buttons */
+#generateButton {
+   margin-top: 20px;
+   padding: 10px 20px;
+   background-color: #3498db;
+   color: white;
+   border: none;
+   font-size: 16px;
+   cursor: pointer;
+}
+
+
+/* Styling for step buttons (next, prev) */
+#prev, #next {
+   font-size: 24px;
+   background-color: #3498db;
+   color: white;
+   border: none;
+   padding: 10px 20px;
+   cursor: pointer;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+}
+
+
+#prev {
+   left: 10px;
+}
+
+
+#next {
+   right: 10px;
+}
+
+
+/* Styling for displaying the current step */
+#stepNumber {
+   font-size: 20px;
+   margin-top: 10px;
+}
+
+#fullBody{
+   background-color: grey;
+}
+
+/* Styling for explanation box */
+#aiOutput{
+   color: white;
+}

@@ -8,6 +8,7 @@ let currentPage = 1;
 window.currentPage = currentPage;
 let globalArray = [0];
 let globalAlgorithm = "test";
+let iframe = document.getElementById('frameExplanation');
 
 if (infoButton) {
     //Toggle info popup
@@ -37,7 +38,7 @@ let conversationHistory = [{
 //Setup parse function
 var goButton = document.getElementById('goButton');
 if (goButton) {
-    document.getElementById('goButton').addEventListener('click', function (event) {
+    goButton.addEventListener('click', function (event) {
         parsing = true;
         event.preventDefault();
         console.log('Parsing!');
@@ -46,6 +47,14 @@ if (goButton) {
         var textarea = document.getElementById('codeInput');
         var submitButton = document.getElementById('goButton');
 
+        //Send button click to explanation frame
+        if (iframe.contentWindow) {
+            iframe.contentWindow.postMessage({
+                action: 'goButtonClicked'
+            }, '*');
+        } else {
+            console.log("no iframe!")
+        }
 
         //Create new elements
         var highlightArea = document.createElement('pre');
@@ -59,7 +68,7 @@ if (goButton) {
 
 
         //Create the back button
-        backButton.classList.add('btn', 'btn-dark');        
+        backButton.classList.add('btn', 'btn-dark');
         backButton.id = 'backButton'
         backButton.textContent = "⬅ (Back!)";
         submitButton.parentNode.replaceChild(backButton, submitButton); //Replace submit button w back button
@@ -70,6 +79,15 @@ if (goButton) {
             parsing = false;
             highlightArea.parentNode.replaceChild(textarea, highlightArea);
             backButton.parentNode.replaceChild(submitButton, backButton);
+
+
+            if (iframe.contentWindow) {
+                iframe.contentWindow.postMessage({
+                    action: 'backButtonClicked'
+                }, '*');
+            } else {
+                console.log("no iframe!")
+            }
         });
     });
 }
@@ -103,7 +121,7 @@ document.addEventListener('keydown', async function (event) {
             console.log("Entered explanation case!");
 
             // Define iframe variables
-            let iframe = document.querySelector("iframe");
+            // let iframe = document.querySelector("iframe");
 
             // ----- First Prompt: Full AI Explanation -----
             conversationHistory.push({
@@ -133,8 +151,10 @@ document.addEventListener('keydown', async function (event) {
 
             //Dummy loading text
             // if (aiOutput) aiOutput.innerHTML = "Generating response...";
-            iframe.contentWindow.postMessage({ explanation: 'Generating response...'}, "*");
-            
+            iframe.contentWindow.postMessage({
+                explanation: 'Generating response...'
+            }, "*");
+
             conversationHistory.push({
                 role: 'user',
                 content: selectedText

@@ -140,13 +140,23 @@ hr {
     max-width: calc(100vw - 300px);
     background-color:var(--vscode-bg);
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     border: none;
     align-items: flex-start;
     display: block;
     padding-left: 15px;
     margin-top: 1vh;
     resize: vertical; 
+}
+
+#codeInput::placeholder {
+    color: var(--vscode-line-number);
+    font-size: 16px;
+}
+
+@keyframes blink {
+    0%, 50% { background-color: white; }
+    51%, 100% { background-color: red; }
 }
 
 #backButton{

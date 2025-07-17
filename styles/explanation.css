@@ -104,5 +104,13 @@ body {
 
 /* Styling for explanation box */
 #aiOutput{
-   color: white;
+   display: flex;  
+   margin-right:10px;
+   color: #b4cdde;
+   font-family: Arial, sans-serif;
+   font-size: 16px;
+   text-align: left;
+   line-height: 1.6;
+   justify-content: space-between;
+
 }

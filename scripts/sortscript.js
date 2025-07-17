@@ -12,7 +12,7 @@ const barWidth = 30;   // Fixed width for bars
 // Function to trigger sorting algorithm and visualization
 function generateAndSort() { 
     globalArray = JSON.parse(localStorage.getItem("globalArray") || "[0]");
-    console.log("Retrieved in shortscript.js:", globalArray);
+    console.log("Retrieved in sortscript.js:", globalArray);
     inputArray = globalArray.split(",");
 
     sortMethod = localStorage.getItem("sortingAlgorithm") || "test";

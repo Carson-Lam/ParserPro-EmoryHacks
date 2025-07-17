@@ -150,13 +150,8 @@ hr {
 }
 
 #codeInput::placeholder {
-    color: var(--vscode-line-number);
+    color: var(--vscode-line-number); /* Initial placeholder color */
     font-size: 16px;
-}
-
-@keyframes blink {
-    0%, 50% { background-color: white; }
-    51%, 100% { background-color: red; }
 }
 
 #backButton{

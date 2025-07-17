@@ -105,12 +105,47 @@ body {
 /* Styling for explanation box */
 #aiOutput{
    display: flex;  
-   margin-right:10px;
-   color: #b4cdde;
+   flex-direction: column; 
+   align-items: center;
+   justify-content: center;
    font-family: Arial, sans-serif;
-   font-size: 16px;
-   text-align: left;
-   line-height: 1.6;
-   justify-content: space-between;
+   white-space: pre-line; /* preserves paragraph breaks */
+}
 
+/*Styling for explanation box header*/
+#explanationHeader{
+   color: #90c0e0;
+   font-size: 36px;
+   margin: 0;
+   animation: pulse 4.0s ease-in-out infinite;
+}
+
+/*Animate the explanation box header's color*/
+@keyframes pulse {
+   0% {
+      color: #90c0e0; 
+   }
+   50% {
+      color: #007acc;
+
+   }
+   100% {
+      color: #90c0e0;
+   }
+}
+
+
+/*Styling for explanation box description*/
+#explanationDescript{
+   color: white;
+   font-size: 18px;
+   text-align: center;
+   line-height: 1.5;
+}
+
+/*Formatting for AI Response that overrides the description*/
+.ai-text{
+   text-align: left !important;
+   margin-bottom: 20px;
+   margin-right: 20px;
 }

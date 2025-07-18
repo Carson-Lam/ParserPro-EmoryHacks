@@ -110,84 +110,84 @@ function checkHighlightedText() {
 }
 
 
-    //Check for enter keypress and parse selected text if yes
-    document.addEventListener('keydown', async function (event) {
-        if (event.key === 'Enter' && parsing == true) {
-            console.log("Enter key pressed!");
-            checkHighlightedText();
+//Check for enter keypress and parse selected text if yes
+document.addEventListener('keydown', async function (event) {
+    if (event.key === 'Enter' && parsing == true) {
+        console.log("Enter key pressed!");
+        checkHighlightedText();
 
-            // CASE 1: USER IS ON PAGE EXPLANATION //
-            if (window.currentPage == 1) {
-                console.log("Entered explanation case!");
+        // CASE 1: USER IS ON PAGE EXPLANATION //
+        if (window.currentPage == 1) {
+            console.log("Entered explanation case!");
 
-                // Define iframe variables
-                // let iframe = document.querySelector("iframe");
+            // Define iframe variables
+            // let iframe = document.querySelector("iframe");
 
-                // ----- First Prompt: Full AI Explanation -----
-                conversationHistory.push({
-                    role: 'system',
-                    content: [
-                        'As explained in the last prompt ',
-                        'You are the best software engineer in the world. ',
-                        'You have decades of experience in understanding and ',
-                        'explaining any kind of code you encounter. ',
-                        'First, understand the function and purpose of the code. ',
-                        'After, craft a concise but detailed explanation ',
-                        'that summarizes what the code does. Ensure that the ',
-                        'response is given in plain text. ',
-                        'You understand everything in the code submitted. ',
-                        'Under no circumstances will you prompt the user ',
-                        'for more information. The response should not reveal ',
-                        'your persona, keep the response impersonable and analytic.',
-                        'You should also format your response nicely. DO NOT just outputting',
-                        'a block of text. Bullet points, paragraph braeks, and more.',
-                        'Make sure to include blank lines for readability.'
-                    ].join('')
+            // ----- First Prompt: Full AI Explanation -----
+            conversationHistory.push({
+                role: 'system',
+                content: [
+                    'As explained in the last prompt ',
+                    'You are the best software engineer in the world. ',
+                    'You have decades of experience in understanding and ',
+                    'explaining any kind of code you encounter. ',
+                    'First, understand the function and purpose of the code. ',
+                    'After, craft a concise but detailed explanation ',
+                    'that summarizes what the code does. Ensure that the ',
+                    'response is given in plain text. ',
+                    'You understand everything in the code submitted. ',
+                    'Under no circumstances will you prompt the user ',
+                    'for more information. The response should not reveal ',
+                    'your persona, keep the response impersonable and analytic.',
+                    'You should also format your response nicely. DO NOT just outputting',
+                    'a block of text. Bullet points, paragraph braeks, and more.',
+                    'Make sure to include blank lines for readability.'
+                ].join('')
+            });
+
+            //Check for duplicate input
+            // if (selectedText === document.getElementById('aiOutput').getAttribute('data-last-query')) {
+            //     console.log("bruh");
+            //     return;
+            // }
+            // document.getElementById('aiOutput').setAttribute('data-last-query', selectedText);
+
+            //Dummy loading text
+            // if (aiOutput) aiOutput.innerHTML = "Generating response...";
+            iframe.contentWindow.postMessage({
+                explanation: 'Generating response...'
+            }, "*");
+
+            conversationHistory.push({
+                role: 'user',
+                content: selectedText
+            });
+
+            try {
+                const response1 = await fetch(`https://parserpro.onrender.com/parse`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        messages: conversationHistory,
+                        model: 'llama-3.3-70b-versatile'
+                    })
                 });
 
-                //Check for duplicate input
-                // if (selectedText === document.getElementById('aiOutput').getAttribute('data-last-query')) {
-                //     console.log("bruh");
-                //     return;
-                // }
-                // document.getElementById('aiOutput').setAttribute('data-last-query', selectedText);
+                const completion1 = await response1.json();
+                conversationHistory.push({
+                    role: 'assistant',
+                    content: completion1.choices[0].message.content
+                });
 
-                //Dummy loading text
-                // if (aiOutput) aiOutput.innerHTML = "Generating response...";
                 iframe.contentWindow.postMessage({
-                    explanation: 'Generating response...'
+                    explanation: completion1.choices[0].message.content
                 }, "*");
-
-                conversationHistory.push({
-                    role: 'user',
-                    content: selectedText
-                });
-
-                try {
-                    const response1 = await fetch(`https://parserpro.onrender.com/parse`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            messages: conversationHistory,
-                            model: 'llama-3.3-70b-versatile'
-                        })
-                    });
-
-                    const completion1 = await response1.json();
-                    conversationHistory.push({
-                        role: 'assistant',
-                        content: completion1.choices[0].message.content
-                    });
-
-                    iframe.contentWindow.postMessage({
-                        explanation: completion1.choices[0].message.content
-                    }, "*");
-                } catch (error) {
-                    console.error('Error: ', error.message);
-                }
+            } catch (error) {
+                console.error('Error: ', error.message);
             }
+        }
 
         // CASE 2: USER IS ON PAGE VISUALIZATAION //
         else if (currentPage == 2) {

@@ -1,0 +1,113 @@
+/* Syntax highlighting */
+.comment {
+    color: #6a9955;
+    font-style: italic;
+}
+
+.keyword {
+    color: #569cd6;
+    font-weight: bold;
+}
+
+.keyword-void {
+    color: #4ec9b0;
+    font-weight: bold;
+}
+
+.method-name {
+    color: #dcdcaa;
+}
+
+.class-name {
+    color: #4ec9b0;
+}
+
+.variable {
+    color: white;
+}
+
+.parentheses {
+    color: #ff69b4;
+}
+
+.braces {
+    color: #ff69b4;
+}
+
+.methodParentheses {
+    color: #ebc00a;
+}
+
+.methodBraces {
+    color: #ebc00a;
+}
+
+.semicolon {
+    color: #d4d4d4;
+}
+
+
+/* Styling for explanation box */
+#aiOutput {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: Arial, sans-serif;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
+/*Default styling for explanation box header*/
+/* This default styling is overriden when the welcome page loads */
+#explanationHeader {
+    font-size: 18px;
+    margin: 0px;
+}
+
+/* Default styling for explanation box description*/
+/* This default styling is overriden when the welcome page loads */
+#explanationDescript {
+    font-size: 18px;
+    margin: 0px;
+}
+
+/*Formatting for stage headers that overrides default when goButton pressed*/
+.header-text {
+    font-weight: bold;
+    font-size: 46px !important;
+    animation: pulse 2.0s ease-in-out infinite !important;
+}
+
+/*Formatting for stage descriptions that overrides default when goButton pressed*/
+.descript-text{
+    color: #6a9955;
+    font-style: italic;
+    margin-right: 20px;
+}
+
+/*Formatting for descriptions that overrides when AI gives response*/
+.ai-text {
+    color: white;
+    font-style: normal;
+    white-space: pre-wrap;
+}
+
+
+
+/*Animate the explanation box header's color during editing*/
+@keyframes pulse {
+    0% {
+        color: #90c0e0;
+    }
+
+    50% {
+        color: #007acc;
+    }
+
+    100% {
+        color: #90c0e0;
+    }
+}

@@ -22,9 +22,11 @@ window.addEventListener("message", function (event) {
     // If go button clicked
     if (event.data && event.data.action === 'goButtonClicked') {
         if (aiOutput) {
+            header.classList.add('header-text');
             header.textContent = "PARSING STAGE";
             description.classList.remove('ai-text');
-            description.textContent = "To analyze code, highlight code and press -Enter-";
+            description.classList.add('descript-text')
+            description.textContent = "// To analyze code, highlight code and press -Enter-";
             console.log("PARSING STAGE");
         }
     }
@@ -32,11 +34,12 @@ window.addEventListener("message", function (event) {
     // If back button clicked
     if (event.data && event.data.action === 'backButtonClicked') {
         if (aiOutput) {
+            header.classList.add('header-text');
             header.textContent = "EDITING STAGE";
             description.classList.remove('ai-text');
-            description.textContent = "To parse code, press the *parse* button on the top right!"; 
+            description.classList.add('descript-text');
+            description.textContent = "// To parse code, press the *parse* button on the top right!"; 
             console.log("EDITING STAGE");
-
         }
     }
 });

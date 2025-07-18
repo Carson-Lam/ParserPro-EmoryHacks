@@ -28,7 +28,7 @@
 }
 
 :root {
-    --vscode-bg: #1e1e1e;
+    --vscode-bg: #1f1f1f;
     --vscode-darker-bg: #252526;
     --vscode-darkest: #181818;
     --vscode-sidebar: #333333;
@@ -97,12 +97,13 @@ hr {
     top: 0;
     left: 300px;
     width: calc(100% - 300px);
-    height: 50px;
+    height: 43px;
     z-index: 100;
     display: flex;
-    flex-direction: column;
-    background-color: var(--vscode-bg);
-
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: #181818;
+    border-bottom: 1px solid var(--vscode-highlight);
 }
 
 .top-bar-img {
@@ -144,11 +145,13 @@ hr {
     background-color: var(--vscode-bg);
     color: white;
     font-size: 16px;
-    border: none;
+    border: none; /* remove form border */
+    outline: none; /* remove form outline */
     align-items: flex-start;
     display: block;
     padding-left: 15px;
-    margin-top: 1vh;
+    margin-top: 6.0vh;
+    margin-left: 3px;
     resize: vertical;
 }
 
@@ -158,38 +161,105 @@ hr {
     font-size: 16px;
 }
 
+
 #backButton {
-    background-color: var(--vscode-darker-bg);
-    border-color: var(--vscode-border);
-    color: white;
-    position: fixed;
-    right: 10vh;
-    top: 0.7vh;
+    background-color: var(--vscode-bg);
+    border-top: 1.5px solid var(--vscode-blue);
+    border-bottom: none;   
+    border-left: 1px solid var(--vscode-darker-bg);  
+    border-right: 1px solid var(--vscode-darker-bg);
     z-index: 300;
     font-size: 15px;
-    padding: 2px 6px;
+    font-family: 'Segoe WPC','Segoe UI',sans-serif;
+    color: white;
+    padding: 5px 15px;
+    transition: background-color 0.2s ease;
+}
+#goButton:hover{
+    background-color: var(--vscode-border);
 }
 
+/*Parse (Go) button */
 #goButton {
-    background-color: var(--vscode-darker-bg);
-    border-color: var(--vscode-border);
-    position: fixed;
-    right: 10vh;
-    top: 0.7vh;
+    background-color: var(--vscode-bg);
+    border-top: 1.5px solid var(--vscode-blue);
+    border-bottom: none;   
+    border-left: 1px solid var(--vscode-darker-bg);  
+    border-right: 1px solid var(--vscode-darker-bg);
     z-index: 300;
     font-size: 15px;
-    padding: 2px 6px;
+    font-family: 'Segoe WPC','Segoe UI',sans-serif;
+    color: white;
+    padding: 5px 13px;
+    transition: background-color 0.2s ease;
 }
+#goButton:hover{
+    background-color: var(--vscode-border);
+}
+
 
 #infoButton {
-    background-color: var(--vscode-darker-bg);
-    border-color: var(--vscode-border);
-    position: fixed;
-    right: 1vh;
-    top: 0.7vh;
+    background-color: var(--vscode-bg);
+    border-top: 1.5px solid var(--vscode-blue);
+    border-bottom: none;   
+    border-left: 2px solid var(--vscode-darker-bg);  
+    border-right: 1px solid var(--vscode-darker-bg);
     z-index: 300;
     font-size: 15px;
-    padding: 2px 6px;
+    font-family: 'Segoe WPC','Segoe UI',sans-serif;
+    color: white;
+    padding: 5px 13px;
+    transition: background-color 0.2s ease;
+
+}
+#infoButton:hover{
+    background-color: var(--vscode-border);
+}
+
+
+#fileElement {
+    background-color: var(--vscode-bg);
+    border-top: 1.5px solid var(--vscode-blue);
+    border-bottom: none;   
+    border-left: 1px solid var(--vscode-darker-bg);  
+    border-right: 1px solid var(--vscode-darker-bg);
+    z-index: 300;
+    font-size: 15px;
+    font-family: 'Segoe WPC','Segoe UI',sans-serif;
+    color: white;
+    padding: 5px 13px;
+    margin-right: auto;
+    transition: background-color 0.2s ease;
+
+}
+#fileElement:hover{
+    background-color: var(--vscode-border);
+}
+
+
+/* docs icon on file */
+#fileIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+}
+
+/* X icon on file */
+#closeX {
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    color: #ccc;
+    border-radius: 50%;
+    cursor: pointer; 
+    margin-left: 7px;
+    padding: 0px 5px;
+    transition: background-color 0.2s ease;
+
+}
+
+#closeX:hover{
+    background-color: var(--vscode-border);
 }
 
 

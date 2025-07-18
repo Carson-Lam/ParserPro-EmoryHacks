@@ -16,10 +16,10 @@ if (infoButton) {
         // Check if the popup is currently visible
         if (infoPopup.style.display === "block") {
             infoPopup.style.display = "none"; // Hide the popup if it's already visible
-            infoButton.innerHTML = " 🛈 (Info) "; // Change button text back
+            infoButton.innerHTML = " 🛈 Info "; // Change button text back
         } else {
             infoPopup.style.display = "block"; // Show the popup if it's hidden
-            infoButton.innerHTML = " ✖ (Close) "; // Change button text to "Close"
+            infoButton.innerHTML = " ✖ Close "; // Change button text to "Close"
         }
     });
 }
@@ -66,11 +66,10 @@ if (goButton) {
         highlightArea.textContent = textarea.value;
         textarea.parentNode.replaceChild(highlightArea, textarea); //Replace text area w highlight area
 
-
         //Create the back button
-        backButton.classList.add('btn', 'btn-dark');
+        // backButton.classList.add('btn', 'btn-dark');
         backButton.id = 'backButton'
-        backButton.textContent = "⬅ (Back!)";
+        backButton.textContent = "⮜ (Back!)";
         submitButton.parentNode.replaceChild(backButton, submitButton); //Replace submit button w back button
 
 

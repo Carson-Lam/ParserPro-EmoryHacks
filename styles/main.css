@@ -156,9 +156,12 @@ hr {
 }
 
 #codeInput::placeholder {
-    color: var(--vscode-line-number);
-    /* Initial placeholder color */
-    font-size: 16px;
+    color: var(--vscode-border);
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 
@@ -284,7 +287,7 @@ hr {
     display: none;
     position: fixed;
     text-align: center;
-    font-family: 'arial narrow bold', sans-serif;
+    font-family: 'Segoe WPC','Segoe UI',sans-serif;
     font-size: 20px;
     z-index: 300;
     top: 50%;

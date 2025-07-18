@@ -11,17 +11,19 @@
         /* Reset body and html margins and padding */
         html,
         body {
+            display: flex;
+            flex-direction: column;
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #181818;
+            font-family: 'Segoe WPC', 'Segoe UI', sans-serif;
+            background-color: black;
+            /* background-color: #181818; */
         }
 
         /* Consistent Navbar Styling */
         .navbar {
             background-color: #181818;
             overflow: hidden;
-            position: fixed;
             /* Fix navbar at the top */
             top: 0;
             /* Position at the top */
@@ -52,11 +54,9 @@
 
             /* Make text even whiter on hover */
             color: #fff;
-
             /* Blue underline */
             /* text-decoration: underline;
             text-decoration-color: #0078d7; */
-
         }
 
         /* Keep blue underline when hovered, clicked, or active */
@@ -79,9 +79,8 @@
 
         /* Adjust main content to account for fixed navbar */
         .main-content {
-            /* Padding aligns text w navbar on left */
-            padding-left: 20px;
-            padding-right: 20px;
+            /* Padding aligns ai response, splash text, etc w/ nav */
+            margin: 5px 20px 20px 20px;
         }
 
         /* Styling for input and buttons */
@@ -165,37 +164,38 @@
         <a href="sort.html">Visualization</a>
         <a href="trees.html">Binary Tree</a>
     </div>
-
-    <br><br><br>
-
     <!-- Main content -->
     <div class="main-content">
         <div id="aiOutput">
-            <p id="explanationHeader">
-                <span class="comment">// WELCOME TO PARSERPRO</span>
-                <br>
-                <span class="comment">// To get started, see (info) on the top right!</span>
-            </p>
-            <p id="explanationDescript">
-                <span class="keyword">public</span> <span class="keyword">static</span>
-                <span class="keyword-void">void</span> <span class="method-name">WELCOME_PAGE</span><span class="methodParentheses">()</span> 
-                <span class="methodBraces">{</span>
-                <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="method-name">loadInterface</span><span class="parentheses">()</span><span 
-                class="semicolon">;</span>
-                <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="method-name">GreetUser</span><span class="parentheses">(</span><span 
-                class="variable">userName</span><span 
-                class="parentheses">)</span><span class="semicolon">;</span>
-                <br>
-                <span class="methodBraces">}</span>
-            </p>
+            <p id="stylingHeader">ParserPro [Version 1.1.0]<br><br>C:\Users\yourName><span class="stageHeader">
+                    ParserPro start</span></p>
+            <div id="stylingDescript">
+                <p id="explanationHeader">
+                    <span class="comment">// WELCOME TO PARSERPRO</span>
+                    <br>
+                    <span class="comment">// To get started, see (info) on the top right!</span>
+                </p>
+                <p id="explanationDescript">
+                    <span class="keyword">public</span> <span class="keyword">static</span>
+                    <span class="keyword-void">void</span> <span class="method-name">WELCOME_PAGE</span><span
+                        class="methodParentheses">()</span>
+                    <span class="methodBraces">{</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="method-name">loadInterface</span><span
+                        class="parentheses">()</span><span class="semicolon">;</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="method-name">GreetUser</span><span
+                        class="parentheses">(</span><span class="variable">yourName</span><span
+                        class="parentheses">)</span><span class="semicolon">;</span>
+                    <br>
+                    <span class="methodBraces">}</span>
+                </p>
+            </div>
         </div>
     </div>
 
     <script src="scripts/script2.js"></script>
     <script src="scripts/explanation.js"></script>
-
 </body>
 
 </html>

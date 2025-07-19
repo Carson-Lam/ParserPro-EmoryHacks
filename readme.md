@@ -22,8 +22,7 @@ Follow the [github-pages link](https://carson-lam.github.io/ParserPro-EmoryHacks
 
 - [Bootstrap](https://getbootstrap.com/)
 
-- [Marked.js] Markdown formatter (https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js)
-
-- [Prism.js] syntax highlighter
+- [Marked.js](https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js) Markdown formatter 
+- [Prism.js](https://www.jsdelivr.com/package/npm/prismjs) syntax highlighter
 
 

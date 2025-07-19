@@ -182,13 +182,13 @@ body {
    white-space: nowrap;
    /* background-color: green; */
    display: inline-block;
-   border-right: .15em solid white;
+   border-right: .5em solid white;
    margin: 0px;
    letter-spacing: .05em;
    animation:
       typing 1.0s steps(15, end) forwards,
       blink-caret .75s step-end infinite,
-      hide-caret 0s 4s forwards;
+      hide-caret 0s 5s forwards;
    overflow: hidden;
    max-width: 0;
    width: auto;
@@ -223,6 +223,7 @@ body {
       border-color: transparent;
    }
 }
+
 
 /*Animation for explanation box header and description */
 .stylingDescript {

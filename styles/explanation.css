@@ -177,7 +177,7 @@ body {
    margin: 0px;
 }
 
-/*Styling and typing animation for stage indicator */
+/*Styling and typing animation for stage header */
 .stageHeader {
    white-space: nowrap;
    /* background-color: green; */
@@ -187,7 +187,7 @@ body {
    margin: 0px;
    letter-spacing: .05em;
    animation:
-      typing 1.0s steps(16, end) forwards,
+      typing 0.6s steps(16, end) forwards,
       blink-caret .75s step-end infinite,
       hide-caret 0s 4s forwards;
    overflow: hidden;
@@ -195,6 +195,7 @@ body {
    width: auto;
    vertical-align: top;
 }
+
 
 @keyframes typing {
    from {
@@ -223,10 +224,9 @@ body {
 }
 
 /*Animation for explanation box header and description */
-#stylingDescript{
-   animation: 1.0s infinite;
+.stylingDescript{
    visibility: hidden;
-   animation: appear 0s 1.5s forwards;
+   animation: appear 0s 0.8s forwards;
 }
 
 @keyframes appear {
@@ -235,14 +235,13 @@ body {
    }
 }
 
-
 /*Default styling for stage header & description*/
 #explanationHeader, #explanationDescript {
    margin: 0px;
 }
 
 /*Formatting for stage headers that overrides default when goButton pressed*/
-.header-text {
+.header-override {
    font-weight: bold;
    font-size: 46px !important;
    animation: pulse 2.0s ease-in-out infinite !important;
@@ -264,7 +263,7 @@ body {
 }
 
 /*Formatting for stage descriptions that overrides default when goButton pressed*/
-.descript-text {
+.descript-override {
    color: #6a9955;
    font-style: italic;
    margin-right: 20px;

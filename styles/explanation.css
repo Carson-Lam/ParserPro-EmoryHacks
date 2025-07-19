@@ -78,7 +78,7 @@ body {
 #next {
    font-size: 24px;
    background-color: #3498db;
-   color: white;
+   color: white; 
    border: none;
    padding: 10px 20px;
    cursor: pointer;
@@ -166,13 +166,14 @@ body {
    align-items: flex-start;
    font-size: 18px;
    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+   color: white; /* Default terminal text color */ 
+
    width: 100%;
 }
 
 /* Styling for "Boilerplate" terminal text */
 #stylingHeader {
    white-space: pre-wrap;
-   color: white;
    margin: 0px;
 }
 
@@ -180,13 +181,12 @@ body {
 .stageHeader {
    white-space: nowrap;
    /* background-color: green; */
-   color: white;
    display: inline-block;
    border-right: .15em solid white;
    margin: 0px;
    letter-spacing: .05em;
    animation:
-      typing 1.0s steps(20, end) forwards,
+      typing 1.0s steps(15, end) forwards,
       blink-caret .75s step-end infinite,
       hide-caret 0s 4s forwards;
    overflow: hidden;
@@ -280,13 +280,25 @@ body {
 }
 
 /* Formatting for AI text */
-.ai-text h1,
+.ai-text h1 {
+   color: #007acc;
+   margin-bottom: 0px;
+}
 .ai-text h2,
 .ai-text h3,
-.ai-text h4 {
-   color: #007acc;
+.ai-text h3 {
+   color: #90c0e0;
+   margin-bottom: 0px;
 }
 
 .ai-text ul li::marker {
-    color: #007acc;  /* Change bullet color */
+   color: #90c0e0; /* Change bullet color */
+}
+
+/* Formatting for AI text code */
+.ai-text pre {
+    background-color: #1f1f1f;  /* Dark background for code block */
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;  /* Allow horizontal scrolling for long lines */
 }

@@ -22,8 +22,6 @@ window.addEventListener("message", function (event) {
         stylingDescript.classList.remove('stylingDescript');
         void stylingHeader.offsetWidth; // Force reflow
         stylingDescript.classList.add('stylingDescript');
-
-
     }
 
 
@@ -53,7 +51,7 @@ window.addEventListener("message", function (event) {
             //Set text content to stage text content 
             stageHeader.textContent = "Start Parsing";
             header.textContent = "--PARSING STAGE--";
-            description.textContent = "// To analyze code, highlight code and press -Enter-";
+            description.textContent = "// To analyze code, highlight code and press *Enter*";
 
             //Add overriding styling
             description.classList.add('descript-override')
@@ -72,7 +70,7 @@ window.addEventListener("message", function (event) {
             //Set text content to stage text content 
             stageHeader.textContent = "Start Editing";
             header.textContent = "--EDITING STAGE--";
-            description.textContent = "// To parse code, press the *parse* button on the top right!";
+            description.textContent = "// To parse code, press the *Parse* button on the top right!";
 
             //Add overriding styling
             header.classList.add('header-text');

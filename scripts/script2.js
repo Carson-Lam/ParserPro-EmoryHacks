@@ -4,6 +4,7 @@ const infoPopup = document.getElementById("infoPopup");
 
 var selectedText = "";
 var parsing = false;
+
 let currentPage = 1;
 window.currentPage = currentPage;
 let globalArray = [0];
@@ -60,14 +61,15 @@ if (goButton) {
         var highlightArea = document.createElement('pre');
         var backButton = document.createElement('button');
 
-        //Create the highlight area
+        //Create the highlight area and override text area on button click
         highlightArea.classList.add('highlightArea');
         highlightArea.id = 'highlightArea';
-        highlightArea.textContent = textarea.value;
+        highlightArea.innerHTML = Prism.highlight(textarea.value, 
+            Prism.languages.javascript, 'javascript'); //Replaces highlightArea w syntax formatted text taken from textarea
         textarea.parentNode.replaceChild(highlightArea, textarea); //Replace text area w highlight area
 
         //Create the back button
-        // backButton.classList.add('btn', 'btn-dark');
+        //backButton.classList.add('btn', 'btn-dark');
         backButton.id = 'backButton'
         backButton.textContent = "⮜ (Back!)";
         submitButton.parentNode.replaceChild(backButton, submitButton); //Replace submit button w back button
@@ -96,8 +98,6 @@ if (goButton) {
 function checkHighlightedText() {
     // Store selected text as a string and where selection starts (anchor node)
     const newSelectedText = window.getSelection().toString();
-    // const selectionAnchorNode = window.getSelection().anchorNode;
-
 
     // Check if highlighted text is in the highlight area and if anything is highlighted
     if (newSelectedText && highlightArea.textContent.includes(newSelectedText)) {
@@ -133,14 +133,14 @@ document.addEventListener('keydown', async function (event) {
                     'First, understand the function and purpose of the code. ',
                     'After, craft a concise but detailed explanation ',
                     'that summarizes what the code does. Ensure that the ',
-                    'response is given in plain text. ',
+                    'response is given in plain text. If necessary, provide an example case.',
                     'You understand everything in the code submitted. ',
                     'Under no circumstances will you prompt the user ',
                     'for more information. The response should not reveal ',
                     'your persona, keep the response impersonable and analytic.',
                     'You should also format your response nicely in HTML. DO NOT just output',
-                    'a block of text. HTML Bullet points, Line seperators, ',
-                    'paragraph breaks, and more. Keep headers consistent in size.',
+                    'a block of text. Use HTML Bullet points, Line seperators, etc and always start',
+                    'the title header with h1 and subheaders with h3.',
                     'Make sure to include blank lines for readability.'
                 ].join('')
             });

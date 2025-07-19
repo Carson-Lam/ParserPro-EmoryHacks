@@ -21,7 +21,8 @@
 
         /* Consistent Navbar Styling */
         .navbar {
-            background-color: #181818;
+            position: sticky;
+            background-color: #181818;            
             overflow: hidden;
             /* Fix navbar at the top */
             top: 0;
@@ -76,10 +77,10 @@
             text-underline-offset: 5px;
         }
 
-        /* Adjust main content to account for fixed navbar */
+        /* Styling for main content (contains aiContent) */
         .main-content {
+            margin: 10px 20px 20px 20px;
             /* Padding aligns ai response, splash text, etc w/ nav */
-            margin: 5px 20px 20px 20px;
         }
 
         /* Styling for input and buttons */
@@ -193,6 +194,8 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+    <!--MARKDOWN PARSER-->
     <script src="scripts/script2.js"></script>
     <script src="scripts/explanation.js"></script>
 </body>

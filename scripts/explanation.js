@@ -30,9 +30,18 @@ window.addEventListener("message", function (event) {
     //If code highlighted and entered
     if (event.data && event.data.explanation) {
         if (aiOutput) {
+
+            //Set text content to stage text content
+            stageHeader.textContent = "Execute AI analysis";
             header.textContent = "";
-            description.textContent = event.data.explanation;
-            description.classList.add('ai-text'); //Make text follow AI text formatting
+            description.innerHTML = marked.parse(event.data.explanation);
+            /* console.log(event.data.explanation); */
+            console.log(marked.parse(event.data.explanation)); 
+
+            //Add overriding styling 
+            description.classList.add('ai-text');
+
+            restartAnimations();
             console.log("EXPLANATION GENERATED");
         }
     }
@@ -40,10 +49,10 @@ window.addEventListener("message", function (event) {
     // If go button clicked
     if (event.data && event.data.action === 'goButtonClicked') {
         if (aiOutput) {
-            stageHeader.textContent = "Parsing start";
 
             //Set text content to stage text content 
-            header.textContent = "PARSING STAGE";
+            stageHeader.textContent = "Start Parsing";
+            header.textContent = "--PARSING STAGE--";
             description.textContent = "// To analyze code, highlight code and press -Enter-";
 
             //Add overriding styling
@@ -59,11 +68,10 @@ window.addEventListener("message", function (event) {
     // If back button clicked
     if (event.data && event.data.action === 'backButtonClicked') {
         if (aiOutput) {
-            stageHeader.textContent = "Editing start";
-
 
             //Set text content to stage text content 
-            header.textContent = "EDITING STAGE";
+            stageHeader.textContent = "Start Editing";
+            header.textContent = "--EDITING STAGE--";
             description.textContent = "// To parse code, press the *parse* button on the top right!";
 
             //Add overriding styling
@@ -72,7 +80,6 @@ window.addEventListener("message", function (event) {
             description.classList.remove('ai-text');
 
             restartAnimations();
-
             console.log("EDITING STAGE TRANSITIONED");
         }
     }

@@ -135,6 +135,7 @@ hr {
 
 #codeInput,
 #highlightArea {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
     flex: 0 1 auto;
     /* flex-grow, makes it fill up space along it's flex direction */
     height: 50vh;
@@ -145,8 +146,10 @@ hr {
     background-color: var(--vscode-bg);
     color: white;
     font-size: 16px;
-    border: none; /* remove form border */
-    outline: none; /* remove form outline */
+    border: none;
+    /* remove form border */
+    outline: none;
+    /* remove form outline */
     align-items: flex-start;
     display: block;
     padding-left: 15px;
@@ -168,17 +171,18 @@ hr {
 #backButton {
     background-color: var(--vscode-bg);
     border-top: 1.5px solid var(--vscode-blue);
-    border-bottom: none;   
-    border-left: 1px solid var(--vscode-darker-bg);  
+    border-bottom: none;
+    border-left: 1px solid var(--vscode-darker-bg);
     border-right: 1px solid var(--vscode-darker-bg);
     z-index: 300;
     font-size: 15px;
-    font-family: 'Segoe WPC','Segoe UI',sans-serif;
+    font-family: 'Segoe WPC', 'Segoe UI', sans-serif;
     color: white;
     padding: 5px 15px;
     transition: background-color 0.2s ease;
 }
-#goButton:hover{
+
+#goButton:hover {
     background-color: var(--vscode-border);
 }
 
@@ -186,17 +190,18 @@ hr {
 #goButton {
     background-color: var(--vscode-bg);
     border-top: 1.5px solid var(--vscode-blue);
-    border-bottom: none;   
-    border-left: 1px solid var(--vscode-darker-bg);  
+    border-bottom: none;
+    border-left: 1px solid var(--vscode-darker-bg);
     border-right: 1px solid var(--vscode-darker-bg);
     z-index: 300;
     font-size: 15px;
-    font-family: 'Segoe WPC','Segoe UI',sans-serif;
+    font-family: 'Segoe WPC', 'Segoe UI', sans-serif;
     color: white;
     padding: 5px 13px;
     transition: background-color 0.2s ease;
 }
-#goButton:hover{
+
+#goButton:hover {
     background-color: var(--vscode-border);
 }
 
@@ -204,18 +209,19 @@ hr {
 #infoButton {
     background-color: var(--vscode-bg);
     border-top: 1.5px solid var(--vscode-blue);
-    border-bottom: none;   
-    border-left: 2px solid var(--vscode-darker-bg);  
+    border-bottom: none;
+    border-left: 2px solid var(--vscode-darker-bg);
     border-right: 1px solid var(--vscode-darker-bg);
     z-index: 300;
     font-size: 15px;
-    font-family: 'Segoe WPC','Segoe UI',sans-serif;
+    font-family: 'Segoe WPC', 'Segoe UI', sans-serif;
     color: white;
     padding: 5px 13px;
     transition: background-color 0.2s ease;
 
 }
-#infoButton:hover{
+
+#infoButton:hover {
     background-color: var(--vscode-border);
 }
 
@@ -223,19 +229,20 @@ hr {
 #fileElement {
     background-color: var(--vscode-bg);
     border-top: 1.5px solid var(--vscode-blue);
-    border-bottom: none;   
-    border-left: 1px solid var(--vscode-darker-bg);  
+    border-bottom: none;
+    border-left: 1px solid var(--vscode-darker-bg);
     border-right: 1px solid var(--vscode-darker-bg);
     z-index: 300;
     font-size: 15px;
-    font-family: 'Segoe WPC','Segoe UI',sans-serif;
+    font-family: 'Segoe WPC', 'Segoe UI', sans-serif;
     color: white;
     padding: 5px 13px;
     margin-right: auto;
     transition: background-color 0.2s ease;
 
 }
-#fileElement:hover{
+
+#fileElement:hover {
     background-color: var(--vscode-border);
 }
 
@@ -254,14 +261,14 @@ hr {
     border: none;
     color: #ccc;
     border-radius: 50%;
-    cursor: pointer; 
+    cursor: pointer;
     margin-left: 7px;
     padding: 0px 5px;
     transition: background-color 0.2s ease;
 
 }
 
-#closeX:hover{
+#closeX:hover {
     background-color: var(--vscode-border);
 }
 
@@ -287,7 +294,7 @@ hr {
     display: none;
     position: fixed;
     text-align: center;
-    font-family: 'Segoe WPC','Segoe UI',sans-serif;
+    font-family: 'Segoe WPC', 'Segoe UI', sans-serif;
     font-size: 20px;
     z-index: 300;
     top: 50%;

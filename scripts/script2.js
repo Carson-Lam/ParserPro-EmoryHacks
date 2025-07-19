@@ -138,8 +138,9 @@ document.addEventListener('keydown', async function (event) {
                     'Under no circumstances will you prompt the user ',
                     'for more information. The response should not reveal ',
                     'your persona, keep the response impersonable and analytic.',
-                    'You should also format your response nicely. DO NOT just outputting',
-                    'a block of text. Bullet points, paragraph braeks, and more.',
+                    'You should also format your response nicely in HTML. DO NOT just output',
+                    'a block of text. HTML Bullet points, Line seperators, ',
+                    'paragraph breaks, and more. Keep headers consistent in size.',
                     'Make sure to include blank lines for readability.'
                 ].join('')
             });
